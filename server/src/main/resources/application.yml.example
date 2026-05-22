@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sky_take_out?useSSL=false&serverTimezone=Asia/Shanghai
+      username: ${MYSQL_USERNAME:root}
+      password: ${MYSQL_PASSWORD:your_password}
+
+  redis:
+    host: localhost
+    port: 6379
+    password: "${REDIS_PASSWORD:your_password}"
+    database: 10
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sky.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      sky:
+        mapper: debug
+        service: info
+        controller: info
+
+sky:
+  jwt:
+    admin-secret-key: ${JWT_ADMIN_SECRET:your_admin_secret}
+    admin-ttl: 7200000
+    admin-token-name: token
+    user-secret-key: ${JWT_USER_SECRET:your_user_secret}
+    user-ttl: 7200000
+    user-token-name: authentication
+  wechat:
+    appid: ${WECHAT_APPID:your_appid}
+    secret: ${WECHAT_SECRET:your_secret}
