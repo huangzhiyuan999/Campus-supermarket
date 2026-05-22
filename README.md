@@ -53,12 +53,9 @@
 ## 📂 目录结构
 
 ```text
-supermarket/
-├── super-common/           # 通用工具类、常量、异常处理
-├── super-pojo/             # 实体类 (DTO, VO, Entity)
-├── super-server/           # 服务层 (Service, Mapper)
-├── super-admin/            # 管理端 Web 项目 (Controller)
-├── super-user/             # 用户端 Web 项目 (Controller)
-├── super-web-admin/        # 管理端 Vue 前端代码
-├── super-web-user/         # 用户端 前端代码
+sky-take-out/
+├── common/                 # 通用工具类、常量、异常处理
+├── pojo/                   # 实体类 (DTO, VO, Entity)
+├── server/                 # 服务层 (Service, Mapper, Controller)
+├── front/                  # 管理端 Vue 前端代码 (已编译)
 └── pom.xml               # Maven 父工程聚合
