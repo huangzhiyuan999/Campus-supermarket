@@ -7,8 +7,8 @@
                   placeholder="请填写菜品名称"
                   style="width: 14%"
                   clearable
-                  @clear="init"
-                  @keyup.enter.native="initFun" />
+                  @clear="initFun(true)"
+                  @keyup.enter.native="initFun(true)" />
 
         <label style="margin-right: 10px; margin-left: 20px">菜品分类：</label>
         <el-select v-model="categoryId"
@@ -36,7 +36,7 @@
                      :value="item.value" />
         </el-select>
         <el-button class="normal-btn continue"
-                   @click="init(true)">
+                   @click="initFun(true)">
           查询
         </el-button>
 
@@ -204,7 +204,7 @@ export default class extends Vue {
     await getDishPage({
       page: this.page,
       pageSize: this.pageSize,
-      name: this.input || undefined,
+      name: (this.input || '').trim() || undefined,
       categoryId: this.categoryId || undefined,
       status: this.dishStatus
     })
