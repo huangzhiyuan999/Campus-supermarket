@@ -15,7 +15,8 @@
                    style="width: 14%"
                    placeholder="请选择"
                    clearable
-                   @clear="init">
+                   @change="initFun(true)"
+                   @clear="initFun(true)">
           <el-option v-for="item in dishCategoryList"
                      :key="item.value"
                      :label="item.label"
@@ -27,7 +28,8 @@
                    style="width: 14%"
                    placeholder="请选择"
                    clearable
-                   @clear="init">
+                   @change="initFun(true)"
+                   @clear="initFun(true)">
           <el-option v-for="item in saleStatus"
                      :key="item.value"
                      :label="item.label"
@@ -192,9 +194,9 @@ export default class extends Vue {
     this.initFun()
   }
 
-  initFun() {
+  initFun(isSearch?: boolean) {
     this.page = 1
-    this.init()
+    this.init(isSearch)
   }
 
   private async init(isSearch?) {
