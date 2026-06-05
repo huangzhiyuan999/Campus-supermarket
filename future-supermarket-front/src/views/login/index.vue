@@ -150,9 +150,9 @@ export default class extends Vue {
   box-sizing: border-box;
   padding: 58px 28px 36px;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 210, 46, 0.5), transparent 22%),
-    radial-gradient(circle at 80% 70%, rgba(22, 193, 114, 0.2), transparent 26%),
-    linear-gradient(135deg, #f9ffe7 0%, #eaf8d8 42%, #fff4c2 100%);
+    radial-gradient(circle at 18% 18%, rgba(232, 184, 74, 0.28), transparent 24%),
+    radial-gradient(circle at 80% 70%, rgba(46, 159, 104, 0.16), transparent 28%),
+    linear-gradient(135deg, #f1f0df 0%, #e2ead5 46%, #efe4bd 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,8 +178,8 @@ export default class extends Vue {
     display: inline-block;
     padding: 7px 12px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.68);
-    color: #16a66a;
+    background: rgba(246, 244, 226, 0.78);
+    color: #2e8c5c;
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -201,9 +201,9 @@ export default class extends Vue {
 .login-card {
   width: min(1040px, 100%);
   height: 560px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(246, 244, 226, 0.84);
   border-radius: 28px;
-  box-shadow: 0 28px 70px rgba(51, 87, 37, 0.18);
+  box-shadow: 0 28px 70px rgba(51, 87, 37, 0.14);
   display: flex;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.74);
@@ -217,7 +217,7 @@ export default class extends Vue {
   width: 58%;
   position: relative;
   overflow: hidden;
-  background: #ffd22e;
+  background: #d9ad43;
 }
 .login-left::after {
   content: "今日鲜货";
@@ -227,7 +227,7 @@ export default class extends Vue {
   padding: 10px 16px;
   border-radius: 999px;
   color: #17211b;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(246, 244, 226, 0.82);
   font-size: 15px;
   font-weight: 800;
   box-shadow: 0 12px 30px rgba(23, 33, 27, 0.18);
@@ -276,7 +276,7 @@ export default class extends Vue {
   align-items: center;
   padding: 0 52px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(252, 255, 244, 0.96));
+    linear-gradient(180deg, rgba(248, 247, 234, 0.96), rgba(241, 245, 229, 0.96));
 }
 .login-form-wrapper {
   width: 100%;
@@ -299,7 +299,7 @@ export default class extends Vue {
   align-items: center;
   justify-content: center;
   background: linear-gradient(145deg, #102219 0%, #203b29 100%);
-  color: #ffd22e;
+  color: #e8b84a;
   font-size: 28px;
   font-weight: 900;
   box-shadow: 0 14px 28px rgba(16, 34, 25, 0.18);
@@ -315,7 +315,7 @@ export default class extends Vue {
   }
   em {
     margin-top: 6px;
-    color: #16a66a;
+    color: #2e8c5c;
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -332,8 +332,8 @@ export default class extends Vue {
   border: 1px solid #e2eadc;
   transition: border-color 0.3s;
   &:focus {
-    border-color: #ffc200;
-    box-shadow: 0 0 0 2px rgba(255, 194, 0, 0.1);
+    border-color: #dca548;
+    box-shadow: 0 0 0 2px rgba(220, 165, 72, 0.11);
   }
   ::placeholder {
     color: #c9cdd4;
@@ -349,14 +349,14 @@ export default class extends Vue {
   border-radius: 16px;
   font-size: 16px;
   font-weight: 800;
-  background: linear-gradient(135deg, #ffd22e 0%, #ffae1f 100%);
+  background: linear-gradient(135deg, #e8b84a 0%, #d99632 100%);
   border: none;
   color: #17211b;
   transition: all 0.3s;
   &:hover {
-    background: linear-gradient(135deg, #ffe16a 0%, #ffb52b 100%);
+    background: linear-gradient(135deg, #efc96a 0%, #dca548 100%);
     color: #17211b;
-    box-shadow: 0 12px 24px rgba(255, 178, 32, 0.34);
+    box-shadow: 0 12px 24px rgba(178, 129, 45, 0.24);
     transform: translateY(-1px);
   }
 }
@@ -372,7 +372,7 @@ export default class extends Vue {
     padding: 0 8px;
     transition: color 0.3s;
     &:hover {
-      color: #ffc200;
+      color: #d99632;
     }
   }
   .divider {

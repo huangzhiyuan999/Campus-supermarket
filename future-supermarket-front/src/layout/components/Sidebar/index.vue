@@ -139,7 +139,7 @@ export default class extends Vue {
 .logo {
   text-align: center;
   background:
-    linear-gradient(135deg, rgba(255, 210, 46, 0.98), rgba(255, 180, 32, 0.98));
+    linear-gradient(135deg, rgba(232, 184, 74, 0.95), rgba(217, 150, 50, 0.95));
   padding: 14px 12px 0;
   height: 66px;
   box-shadow: inset 0 -1px 0 rgba(23, 33, 27, 0.08);
@@ -167,7 +167,7 @@ export default class extends Vue {
   justify-content: center;
   border-radius: 10px;
   background: #102219;
-  color: #ffd22e;
+  color: #e8b84a;
   font-size: 16px;
   font-weight: 900;
 }

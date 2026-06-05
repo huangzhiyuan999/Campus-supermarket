@@ -54,15 +54,15 @@ export default class extends mixins(ResizeMixin) {
   overflow-x: auto;
   overflow-y: hidden;
   background:
-    radial-gradient(circle at 12% 8%, rgba(255, 210, 46, 0.2), transparent 28%),
-    linear-gradient(135deg, #f8faf0 0%, #eef7df 48%, #f5fbec 100%);
+    radial-gradient(circle at 12% 8%, rgba(232, 184, 74, 0.16), transparent 30%),
+    linear-gradient(135deg, #f2f1e4 0%, #e6ecd9 50%, #eef2e7 100%);
 }
 
 .main-container {
   height: 100%;
   background:
-    linear-gradient(180deg, rgba(255, 248, 215, 0.8) 0%, rgba(248, 250, 240, 0.95) 210px),
-    #f8faf0;
+    linear-gradient(180deg, rgba(238, 226, 179, 0.42) 0%, rgba(242, 241, 228, 0.94) 210px),
+    #f2f1e4;
   position: relative;
   width: calc(100% - 190px);
 }
@@ -82,7 +82,7 @@ export default class extends mixins(ResizeMixin) {
   transition: margin-left 0.28s;
   margin-left: $sideBarWidth;
   background:
-    linear-gradient(180deg, rgba(255, 248, 215, 0.8) 0%, rgba(248, 250, 240, 0.95) 210px),
+    linear-gradient(180deg, rgba(238, 226, 179, 0.42) 0%, rgba(242, 241, 228, 0.94) 210px),
     $gray-5;
   position: relative;
 }

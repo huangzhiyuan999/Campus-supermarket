@@ -13,7 +13,7 @@ body {
   font-size: 14px;
   font-family: Avenir Next, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
   color: #17211b;
-  background: #f8faf0;
+  background: #f2f1e4;
 }
 
 html {
@@ -86,7 +86,7 @@ a:hover {
   }
 
   .el-button--primary {
-    background-color: #FFC200 !important;
+    background-color: #e8b84a !important;
   }
 
   span {
@@ -104,7 +104,7 @@ a:hover {
 .tableColumn-status::before {
   width: 5px;
   height: 5px;
-  background: #1dc779;
+  background: #2e9f68;
   border-radius: 50%;
   content: '';
   display: inline-block;
@@ -133,18 +133,18 @@ div:focus {
 }
 
 .el-button--primary {
-  background: linear-gradient(135deg, #ffd22e 0%, #ffb320 100%) !important;
-  border-color: #ffc13a !important;
-  color: #17211b !important;
+  background: linear-gradient(135deg, #e8b84a 0%, #d99632 100%) !important;
+  border-color: #dca548 !important;
+  color: #20301f !important;
   font-weight: 700;
-  box-shadow: 0 8px 18px rgba(255, 178, 32, 0.18);
+  box-shadow: 0 8px 18px rgba(178, 129, 45, 0.16);
 }
 
 .el-button--primary:hover,
 .el-button--primary:focus {
-  background: linear-gradient(135deg, #ffe16a 0%, #ffc13a 100%) !important;
-  border-color: #ffc13a !important;
-  color: #17211b !important;
+  background: linear-gradient(135deg, #efc96a 0%, #dca548 100%) !important;
+  border-color: #dca548 !important;
+  color: #20301f !important;
 }
 
 .el-input__inner,
@@ -155,8 +155,8 @@ div:focus {
 
 .el-input__inner:focus,
 .el-textarea__inner:focus {
-  border-color: #16c172;
-  box-shadow: 0 0 0 3px rgba(22, 193, 114, 0.1);
+  border-color: #2e9f68;
+  box-shadow: 0 0 0 3px rgba(46, 159, 104, 0.1);
 }
 
 .el-table {
@@ -166,16 +166,16 @@ div:focus {
 }
 
 .el-table th {
-  background: #f3f8e9 !important;
+  background: #ecefdf !important;
   color: #52604f;
 }
 
 .el-table__row:hover > td {
-  background: #fbfff2 !important;
+  background: #f4f4e8 !important;
 }
 
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color: #16c172;
+  background-color: #2e9f68;
 }
 
 .continue {

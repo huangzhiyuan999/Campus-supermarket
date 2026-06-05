@@ -51,7 +51,7 @@ li {
 
       .active {
         height: 38px;
-        background: #ffc200;
+        background: #e8b84a;
       }
     }
   }
@@ -156,12 +156,12 @@ li {
     li {
       flex: 1;
       background:
-        linear-gradient(145deg, #fff8d7 0%, #ffffff 74%);
+        linear-gradient(145deg, #f1e9c8 0%, #f8f6ea 74%);
       border-radius: 12px;
       margin-left: 16px;
       padding: 18px;
-      border: 1px solid rgba(255, 210, 46, 0.34);
-      box-shadow: 0 12px 28px rgba(127, 151, 83, 0.1);
+      border: 1px solid rgba(232, 184, 74, 0.24);
+      box-shadow: 0 12px 28px rgba(127, 151, 83, 0.08);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       position: relative;
       overflow: hidden;
@@ -175,12 +175,12 @@ li {
       right: -16px;
       top: -16px;
       border-radius: 50%;
-      background: rgba(22, 193, 114, 0.12);
+      background: rgba(46, 159, 104, 0.1);
     }
 
     li:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(127, 151, 83, 0.15);
+      box-shadow: 0 18px 36px rgba(127, 151, 83, 0.12);
     }
 
     .tit {
@@ -255,7 +255,7 @@ li {
     width: 4px;
     height: 16px;
     border-radius: 999px;
-    background: linear-gradient(180deg, #16c172, #ffd22e);
+    background: linear-gradient(180deg, #2e9f68, #e8b84a);
   }
   i{
     font-size: 14px;
@@ -266,7 +266,7 @@ li {
   }
   span {
     float: right;
-    color: #16a66a;
+    color: #2e8c5c;
     font-size: 14px;
     font-weight: normal;
     background: url(./../../src/assets/icons/icon_more@2x.png) no-repeat 100% 50%;
@@ -338,11 +338,11 @@ li {
     .container {
       position: relative;
       z-index: 1;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(248, 247, 234, 0.9);
       padding: 30px;
       border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      box-shadow: 0 16px 36px rgba(105, 131, 42, 0.11);
+      border: 1px solid rgba(238, 226, 179, 0.62);
+      box-shadow: 0 16px 36px rgba(105, 131, 42, 0.09);
       backdrop-filter: blur(8px);
     }
 
@@ -368,7 +368,7 @@ li {
     li {
       flex: 1;
       background:
-        linear-gradient(145deg, #ffffff 0%, #f8fff0 100%);
+        linear-gradient(145deg, #f8f6ea 0%, #eef3e4 100%);
       border-radius: 12px;
       margin-left: 16px;
       padding:18px;
@@ -376,17 +376,17 @@ li {
       line-height: 36px;
       color: #17211b;
       border: 1px solid rgba(221, 229, 215, 0.95);
-      box-shadow: 0 12px 28px rgba(127, 151, 83, 0.09);
+      box-shadow: 0 12px 28px rgba(127, 151, 83, 0.07);
       &.add {
         width: 100px;
         flex: none;
-        background: linear-gradient(145deg, #ffd22e 0%, #ffb320 100%);
+        background: linear-gradient(145deg, #e8b84a 0%, #d99632 100%);
         border-radius: 12px;
         text-align: center;
         color: #17211b;
         padding: 18px 20px 10px;
         border: 0;
-        box-shadow: 0 16px 30px rgba(255, 178, 32, 0.24);
+        box-shadow: 0 16px 30px rgba(178, 129, 45, 0.2);
 
         p {
           line-height: 20px;

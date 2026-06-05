@@ -309,9 +309,9 @@ export default class extends Vue {
   // overflow: hidden;
   position: relative;
   background:
-    linear-gradient(135deg, #ffd22e 0%, #ffc02e 52%, #16c172 180%);
-  box-shadow: 0 8px 26px rgba(105, 131, 42, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    linear-gradient(135deg, #e8b84a 0%, #dca548 54%, #2e9f68 185%);
+  box-shadow: 0 8px 24px rgba(105, 131, 42, 0.11);
+  border-bottom: 1px solid rgba(238, 226, 179, 0.5);
 
   // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .statusBox {
@@ -463,13 +463,13 @@ export default class extends Vue {
   .businessBtn {
     height: 28px;
     line-height: 26px;
-    background: #16a66a;
+    background: #2e8c5c;
     border: 1px solid rgba(255, 255, 255, 0.82);
     border-radius: 16px;
     display: inline-block;
     padding: 0 6px;
     color: #fff;
-    box-shadow: 0 6px 16px rgba(22, 193, 114, 0.24);
+    box-shadow: 0 6px 16px rgba(46, 159, 104, 0.2);
   }
   .closing {
     background: #6a6a6a;
@@ -554,7 +554,7 @@ export default class extends Vue {
     }
     .el-radio-group {
       & > .is-checked {
-        border: 1px solid #ffc200;
+        border: 1px solid #dca548;
       }
     }
     .el-radio {
@@ -639,7 +639,7 @@ export default class extends Vue {
       float: right;
     }
     &:hover {
-      background: #fff7d1;
+      background: #f0e6c3;
     }
   }
 }
