@@ -15,8 +15,8 @@
                       maxlength="14" />
           </el-form-item>
           <el-form-item label="套餐分类:"
-                        prop="idType">
-            <el-select v-model="ruleForm.idType"
+                        prop="categoryId">
+            <el-select v-model="ruleForm.categoryId"
                        placeholder="请选择套餐分类"
                        @change="$forceUpdate()">
               <el-option v-for="(item, index) in setMealList"
@@ -210,8 +210,7 @@ export default class extends Vue {
     image: '',
     description: '',
     dishList: [],
-    status: true,
-    idType: ''
+    status: true
   }
 
   get rules() {
@@ -232,7 +231,7 @@ export default class extends Vue {
         },
         trigger: 'blur'
       },
-      idType: {
+      categoryId: {
         required: true,
         message: '请选择套餐分类',
         trigger: 'change'
@@ -280,7 +279,7 @@ export default class extends Vue {
         this.imageUrl = res.data.data.image
         this.checkList = res.data.data.setmealDishes
         this.dishTable = res.data.data.setmealDishes.reverse()
-        this.ruleForm.idType = res.data.data.categoryId
+        this.ruleForm.categoryId = res.data.data.categoryId
       } else {
         this.$message.error(res.data.msg)
       }
@@ -293,10 +292,7 @@ export default class extends Vue {
   private getDishTypeList() {
     getCategoryList({ type: 2, page: 1, pageSize: 1000 }).then(res => {
       if (res && res.data && res.data.code === 1) {
-        this.setMealList = res.data.data.map((obj: any) => ({
-          ...obj,
-          idType: obj.id
-        }))
+        this.setMealList = res.data.data
       } else {
         this.$message.error(res.data.msg)
       }
@@ -365,7 +361,7 @@ export default class extends Vue {
         }))
         ;(prams as any).status =
           this.actionType === 'add' ? 0 : this.ruleForm.status ? 1 : 0
-        prams.categoryId = this.ruleForm.idType
+        prams.categoryId = this.ruleForm.categoryId
         // delete prams.dishList
         if (this.actionType == 'add') {
           delete prams.id
@@ -388,8 +384,7 @@ export default class extends Vue {
                     description: '',
                     dishList: [],
                     status: true,
-                    id: '',
-                    idType: ''
+                    id: ''
                   } as any
                   this.imageUrl = ''
                 }
