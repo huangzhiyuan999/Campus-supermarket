@@ -360,11 +360,11 @@ INSERT INTO orders (
   tableware_status
 )
 VALUES
-  ('MOCK202606050001', 2, 1, 1, NOW() - INTERVAL 50 MINUTE, NOW() - INTERVAL 49 MINUTE, 1, 1, 88.00, '请尽快配送', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 30 MINUTE, 1, NULL, 2, 2, 0),
-  ('MOCK202606050002', 3, 1, 1, NOW() - INTERVAL 45 MINUTE, NOW() - INTERVAL 44 MINUTE, 1, 1, 39.90, '少放油', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 25 MINUTE, 1, NULL, 1, 1, 0),
-  ('MOCK202606050003', 4, 1, 1, NOW() - INTERVAL 40 MINUTE, NOW() - INTERVAL 39 MINUTE, 2, 1, 128.00, '门口电话联系', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 20 MINUTE, 1, NULL, 3, 2, 0),
-  ('MOCK202606050004', 5, 1, 1, NOW() - INTERVAL 2 HOUR, NOW() - INTERVAL 119 MINUTE, 1, 1, 62.00, '已完成测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 80 MINUTE, 1, NOW() - INTERVAL 75 MINUTE, 2, 2, 0),
-  ('MOCK202606050005', 6, 1, 1, NOW() - INTERVAL 90 MINUTE, NOW() - INTERVAL 89 MINUTE, 1, 2, 45.90, '已取消测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', '用户临时取消', NULL, NOW() - INTERVAL 80 MINUTE, NOW() - INTERVAL 45 MINUTE, 1, NULL, 1, 1, 0);
+  ('MOCK202606050001', 2, 1, 1, NOW() - INTERVAL 1 DAY - INTERVAL 50 MINUTE, NOW() - INTERVAL 1 DAY - INTERVAL 49 MINUTE, 1, 1, 88.00, '请尽快配送', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 1 DAY + INTERVAL 30 MINUTE, 1, NULL, 2, 2, 0),
+  ('MOCK202606050002', 3, 1, 1, NOW() - INTERVAL 1 DAY - INTERVAL 45 MINUTE, NOW() - INTERVAL 1 DAY - INTERVAL 44 MINUTE, 1, 1, 39.90, '少放油', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 1 DAY + INTERVAL 25 MINUTE, 1, NULL, 1, 1, 0),
+  ('MOCK202606050003', 4, 1, 1, NOW() - INTERVAL 1 DAY - INTERVAL 40 MINUTE, NOW() - INTERVAL 1 DAY - INTERVAL 39 MINUTE, 2, 1, 128.00, '门口电话联系', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 1 DAY + INTERVAL 20 MINUTE, 1, NULL, 3, 2, 0),
+  ('MOCK202606050004', 5, 1, 1, NOW() - INTERVAL 2 DAY - INTERVAL 2 HOUR, NOW() - INTERVAL 2 DAY - INTERVAL 119 MINUTE, 1, 1, 62.00, '已完成测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 2 DAY - INTERVAL 80 MINUTE, 1, NOW() - INTERVAL 2 DAY - INTERVAL 75 MINUTE, 2, 2, 0),
+  ('MOCK202606050005', 6, 1, 1, NOW() - INTERVAL 3 DAY - INTERVAL 90 MINUTE, NOW() - INTERVAL 3 DAY - INTERVAL 89 MINUTE, 1, 2, 45.90, '已取消测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', '用户临时取消', NULL, NOW() - INTERVAL 3 DAY - INTERVAL 80 MINUTE, NOW() - INTERVAL 3 DAY - INTERVAL 45 MINUTE, 1, NULL, 1, 1, 0);
 
 INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
 SELECT '未来鲜活双人套餐', s.image, o.id, NULL, s.id, NULL, 1, 88.00
