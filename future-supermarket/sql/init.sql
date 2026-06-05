@@ -275,4 +275,137 @@ FROM (
 JOIN setmeal s ON s.name = seed.setmeal_name
 JOIN dish d ON d.name = seed.dish_name;
 
+INSERT INTO user (id, openid, name, phone, sex, id_number, avatar, create_time)
+VALUES
+  (1, 'mock-openid-001', '测试用户', '13800000001', '1', '110101199001010021', NULL, NOW())
+ON DUPLICATE KEY UPDATE
+  openid = VALUES(openid),
+  name = VALUES(name),
+  phone = VALUES(phone),
+  sex = VALUES(sex),
+  id_number = VALUES(id_number);
+
+INSERT INTO address_book (
+  id,
+  user_id,
+  consignee,
+  sex,
+  phone,
+  province_code,
+  province_name,
+  city_code,
+  city_name,
+  district_code,
+  district_name,
+  detail,
+  label,
+  is_default
+)
+VALUES
+  (1, 1, '测试用户', '1', '13800000001', '110000', '北京市', '110100', '北京市', '110108', '海淀区', '上地十街未来超市测试地址', '公司', 1)
+ON DUPLICATE KEY UPDATE
+  user_id = VALUES(user_id),
+  consignee = VALUES(consignee),
+  phone = VALUES(phone),
+  province_name = VALUES(province_name),
+  city_name = VALUES(city_name),
+  district_name = VALUES(district_name),
+  detail = VALUES(detail),
+  label = VALUES(label),
+  is_default = VALUES(is_default);
+
+DELETE od
+FROM order_detail od
+JOIN orders o ON od.order_id = o.id
+WHERE o.number IN (
+  'MOCK202606050001',
+  'MOCK202606050002',
+  'MOCK202606050003',
+  'MOCK202606050004',
+  'MOCK202606050005'
+);
+
+DELETE FROM orders
+WHERE number IN (
+  'MOCK202606050001',
+  'MOCK202606050002',
+  'MOCK202606050003',
+  'MOCK202606050004',
+  'MOCK202606050005'
+);
+
+INSERT INTO orders (
+  number,
+  status,
+  user_id,
+  address_book_id,
+  order_time,
+  checkout_time,
+  pay_method,
+  pay_status,
+  amount,
+  remark,
+  phone,
+  address,
+  user_name,
+  consignee,
+  cancel_reason,
+  rejection_reason,
+  cancel_time,
+  estimated_delivery_time,
+  delivery_status,
+  delivery_time,
+  pack_amount,
+  tableware_number,
+  tableware_status
+)
+VALUES
+  ('MOCK202606050001', 2, 1, 1, NOW() - INTERVAL 50 MINUTE, NOW() - INTERVAL 49 MINUTE, 1, 1, 88.00, '请尽快配送', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 30 MINUTE, 1, NULL, 2, 2, 0),
+  ('MOCK202606050002', 3, 1, 1, NOW() - INTERVAL 45 MINUTE, NOW() - INTERVAL 44 MINUTE, 1, 1, 39.90, '少放油', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 25 MINUTE, 1, NULL, 1, 1, 0),
+  ('MOCK202606050003', 4, 1, 1, NOW() - INTERVAL 40 MINUTE, NOW() - INTERVAL 39 MINUTE, 2, 1, 128.00, '门口电话联系', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() + INTERVAL 20 MINUTE, 1, NULL, 3, 2, 0),
+  ('MOCK202606050004', 5, 1, 1, NOW() - INTERVAL 2 HOUR, NOW() - INTERVAL 119 MINUTE, 1, 1, 62.00, '已完成测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', NULL, NULL, NULL, NOW() - INTERVAL 80 MINUTE, 1, NOW() - INTERVAL 75 MINUTE, 2, 2, 0),
+  ('MOCK202606050005', 6, 1, 1, NOW() - INTERVAL 90 MINUTE, NOW() - INTERVAL 89 MINUTE, 1, 2, 45.90, '已取消测试订单', '13800000001', '北京市海淀区上地十街未来超市测试地址', '测试用户', '测试用户', '用户临时取消', NULL, NOW() - INTERVAL 80 MINUTE, NOW() - INTERVAL 45 MINUTE, 1, NULL, 1, 1, 0);
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT '未来鲜活双人套餐', s.image, o.id, NULL, s.id, NULL, 1, 88.00
+FROM orders o
+JOIN setmeal s ON s.name = '未来鲜活双人套餐'
+WHERE o.number = 'MOCK202606050001';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT '蔬菜轻食人气套餐', s.image, o.id, NULL, s.id, NULL, 1, 39.90
+FROM orders o
+JOIN setmeal s ON s.name = '蔬菜轻食人气套餐'
+WHERE o.number = 'MOCK202606050002';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT '商务午餐优选套餐', s.image, o.id, NULL, s.id, NULL, 1, 128.00
+FROM orders o
+JOIN setmeal s ON s.name = '商务午餐优选套餐'
+WHERE o.number = 'MOCK202606050003';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT d.name, d.image, o.id, d.id, NULL, NULL, 1, d.price
+FROM orders o
+JOIN dish d ON d.name = '老坛酸菜鱼'
+WHERE o.number = 'MOCK202606050004';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT d.name, d.image, o.id, d.id, NULL, NULL, 2, d.price
+FROM orders o
+JOIN dish d ON d.name = '米饭'
+WHERE o.number = 'MOCK202606050004';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT d.name, d.image, o.id, d.id, NULL, NULL, 1, d.price
+FROM orders o
+JOIN dish d ON d.name = '清炒小油菜'
+WHERE o.number = 'MOCK202606050005';
+
+INSERT INTO order_detail (name, image, order_id, dish_id, setmeal_id, dish_flavor, number, amount)
+SELECT d.name, d.image, o.id, d.id, NULL, NULL, 1, d.price
+FROM orders o
+JOIN dish d ON d.name = '北冰洋'
+WHERE o.number = 'MOCK202606050005';
+
 COMMIT;
