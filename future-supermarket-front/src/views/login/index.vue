@@ -146,17 +146,20 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .login-page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 58px 28px 36px;
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 210, 46, 0.5), transparent 22%),
     radial-gradient(circle at 80% 70%, rgba(22, 193, 114, 0.2), transparent 26%),
     linear-gradient(135deg, #f9ffe7 0%, #eaf8d8 42%, #fff4c2 100%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Avenir Next", "Helvetica Neue", "Microsoft YaHei", sans-serif;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 .login-page::before {
   content: "";
@@ -167,9 +170,8 @@ export default class extends Vue {
   pointer-events: none;
 }
 .login-shell-copy {
-  position: absolute;
-  left: 72px;
-  top: 24px;
+  width: min(1040px, 100%);
+  margin-bottom: 18px;
   color: #17211b;
   z-index: 3;
   span {
@@ -197,7 +199,7 @@ export default class extends Vue {
 }
 
 .login-card {
-  width: 1040px;
+  width: min(1040px, 100%);
   height: 560px;
   background: rgba(255, 255, 255, 0.82);
   border-radius: 28px;
